@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+       {
+            "label": "FFmpeg: Extract Last Frame (BEZ změny alphy)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "APPLY_ALPHA=false bash ${workspaceFolder}/extract_last_frame.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "group": "build"
+        },
+        {
+            "label": "FFmpeg: Extract Last Frame (Alfa 30%)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "APPLY_ALPHA=true ALPHA=0.3 bash ${workspaceFolder}/extract_last_frame.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "group": "build"
+        },
+        {
+            "label": "FFmpeg: Clean Output",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "output/*"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "group": "build"
+        }
+    ]
+}
